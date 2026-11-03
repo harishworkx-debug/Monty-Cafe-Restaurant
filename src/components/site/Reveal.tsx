@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { createElement, useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface RevealProps {
@@ -6,14 +6,16 @@ interface RevealProps {
   className?: string;
   /** stagger delay in ms */
   delay?: number;
+  /** element type to render (default "div") */
+  as?: keyof JSX.IntrinsicElements;
 }
 
 /**
  * Scroll-triggered reveal wrapper. Fades/slides children in the first
  * time they enter the viewport.
  */
-export function Reveal({ children, className, delay = 0 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export function Reveal({ children, className, delay = 0, as = "div" }: RevealProps) {
+  const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -38,13 +40,13 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div
-      ref={ref}
-      className={cn("reveal", visible && "reveal-visible", className)}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-    >
-      {children}
-    </div>
+  return createElement(
+    as,
+    {
+      ref,
+      className: cn("reveal", visible && "reveal-visible", className),
+      style: delay ? { transitionDelay: `${delay}ms` } : undefined,
+    },
+    children,
   );
 }

@@ -1,7 +1,8 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { Phone, MessageCircle, CalendarCheck, CheckCircle2, Loader2 } from "lucide-react";
+import { Phone, MessageCircle, CalendarCheck, CircleCheck as CheckCircle2, Loader as Loader2 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { BUSINESS } from "@/lib/site";
+import diningRoom from "@/assets/dining-room.webp";
 
 const TIME_SLOTS = [
   "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
@@ -81,7 +82,7 @@ export function BookingSection() {
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${new URL("@/assets/dining-room.webp", import.meta.url).href})` }}
+        style={{ backgroundImage: `url(${diningRoom})` }}
       />
       <div aria-hidden className="absolute inset-0 bg-forest-deep/88" />
 
