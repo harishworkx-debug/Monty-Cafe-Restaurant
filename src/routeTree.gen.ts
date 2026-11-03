@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicBookingEnquiryRouteImport } from './routes/api/public/booking-enquiry'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicBookingEnquiryRoute = ApiPublicBookingEnquiryRouteImport.update({
+  id: '/api/public/booking-enquiry',
+  path: '/api/public/booking-enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/public/booking-enquiry': typeof ApiPublicBookingEnquiryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/public/booking-enquiry': typeof ApiPublicBookingEnquiryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/public/booking-enquiry': typeof ApiPublicBookingEnquiryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/api/public/booking-enquiry'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/api/public/booking-enquiry'
+  id: '__root__' | '/' | '/api/public/booking-enquiry'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiPublicBookingEnquiryRoute: typeof ApiPublicBookingEnquiryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/booking-enquiry': {
+      id: '/api/public/booking-enquiry'
+      path: '/api/public/booking-enquiry'
+      fullPath: '/api/public/booking-enquiry'
+      preLoaderRoute: typeof ApiPublicBookingEnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiPublicBookingEnquiryRoute: ApiPublicBookingEnquiryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
