@@ -145,6 +145,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Slightly larger base for comfortable reading by customers of all ages */
+    font-size: 17px;
   }
 
   body {
@@ -190,6 +192,64 @@
   50% {
     transform: translateY(-14px);
   }
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@utility animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+/* ---------- Welcome intro ---------- */
+
+@keyframes intro-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.welcome-intro {
+  animation: intro-fade-in 0.7s ease-out both;
+}
+
+.welcome-intro-leaving {
+  animation: intro-fade-out 0.7s ease-in forwards;
+  pointer-events: none;
+}
+
+.intro-item {
+  opacity: 0;
+  transform: translateY(22px) scale(0.97);
+  animation: intro-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @utility animate-kenburns {
@@ -244,8 +304,15 @@
     animation: none !important;
   }
   .animate-kenburns,
-  .animate-float-y {
+  .animate-float-y,
+  .animate-whatsapp-pulse {
     animation: none !important;
+  }
+  .welcome-intro,
+  .intro-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   html {
     scroll-behavior: auto;

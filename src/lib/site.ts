@@ -42,3 +42,23 @@ export const BAGELS: { name: string; description: string; price: number }[] = [
 
 export const DINNER_NOTE =
   "Indian dinner is served Thursday to Sunday, 5 PM – 9 PM. Trading hours can change on public holidays — please call to confirm before your visit.";
+
+/**
+ * Build an official wa.me link with a pre-filled, URL-encoded message.
+ * Used for every booking and enquiry — the customer sends the message
+ * themselves in WhatsApp, so nothing is stored or sent elsewhere.
+ */
+export function whatsappLink(message: string): string {
+  return `${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+/** Pre-filled WhatsApp messages for each part of the site. */
+export const WA_MESSAGES = {
+  general: "Hello Monty Cafe & Restaurant! I have a question about your cafe, please.",
+  booking: "Hello Monty Cafe & Restaurant! I would like to enquire about booking a table, please.",
+  dayMenu: "Hello Monty Cafe & Restaurant! I would like to enquire about your day menu, please.",
+  indianDinner:
+    "Hello Monty Cafe & Restaurant! I would like to know more about your Indian dinner menu, please.",
+  bagels: "Hello Monty Cafe & Restaurant! I would like to enquire about your bagel collection, please.",
+  takeaway: "Hello Monty Cafe & Restaurant! I would like to order a takeaway, please.",
+} as const;
