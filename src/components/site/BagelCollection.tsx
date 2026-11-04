@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { BAGELS } from "@/lib/site";
+import { BAGELS, WA_MESSAGES } from "@/lib/site";
+import { WhatsAppButton } from "./WhatsApp";
 import bagelMenuPoster from "@/assets/bagel-menu.webp";
 
 /**
@@ -23,8 +24,7 @@ export function BagelCollection() {
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 Baked fresh, filled generously. Our bagel menu has something for everyone —
-                savoury brekky classics, hearty lunch fillings and sweet finishes. Add any small
-                coffee for $3.
+                savoury brekky classics, hearty lunch fillings and sweet finishes.
               </p>
             </Reveal>
 
@@ -69,6 +69,7 @@ export function BagelCollection() {
               >
                 See the whole day menu
               </Link>
+              <WhatsAppButton message={WA_MESSAGES.bagels}>Enquire about bagels</WhatsAppButton>
             </Reveal>
           </div>
 

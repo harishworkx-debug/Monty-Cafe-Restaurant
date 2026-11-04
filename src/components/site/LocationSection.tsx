@@ -1,6 +1,7 @@
 import { MapPin, Phone, Navigation } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, WA_MESSAGES, whatsappLink } from "@/lib/site";
+import { WhatsAppIcon } from "./WhatsApp";
 
 export function LocationSection() {
   return (
@@ -50,6 +51,14 @@ export function LocationSection() {
               className="inline-flex items-center gap-2 rounded-full border border-forest/40 px-7 py-3 text-sm font-semibold text-forest transition-all hover:-translate-y-0.5 hover:bg-forest hover:text-cream"
             >
               <Phone className="h-4 w-4" /> Call Now
+            </a>
+            <a
+              href={whatsappLink(WA_MESSAGES.general)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:brightness-105"
+            >
+              <WhatsAppIcon className="h-5 w-5" /> WhatsApp
             </a>
           </div>
         </Reveal>

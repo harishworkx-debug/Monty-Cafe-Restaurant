@@ -3,7 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { BagelCollection } from "@/components/site/BagelCollection";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, WA_MESSAGES } from "@/lib/site";
+import { WhatsAppButton } from "@/components/site/WhatsApp";
 import breakfastRoll from "@/assets/breakfast-roll.webp";
 import clubSandwich from "@/assets/club-sandwich.webp";
 import burgers from "@/assets/burgers.webp";
@@ -121,6 +122,7 @@ function DayMenuPage() {
                 Explore Indian Dinner
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
+              <WhatsAppButton message={WA_MESSAGES.dayMenu}>Ask about the day menu</WhatsAppButton>
             </div>
           </Reveal>
         </div>

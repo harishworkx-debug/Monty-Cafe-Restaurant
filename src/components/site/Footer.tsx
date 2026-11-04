@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, MapPin, Phone } from "lucide-react";
 import montyLogo from "@/assets/monty-logo.png";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, HOURS } from "@/lib/site";
 
 const EXPLORE_LINKS = [
   { label: "Home", to: "/" },
@@ -92,18 +92,22 @@ export function SiteFooter() {
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-terracotta-light" />
                 <span>
                   <strong className="text-cream">Cafe</strong>
-                  <br />
-                  Mon – Tue: 7 AM – 2 PM
-                  <br />
-                  Wed – Sun: 7 AM – 3 PM
+                  {HOURS.map((row) => (
+                    <span key={row.day} className="block">
+                      {row.day.slice(0, 3)}: {row.cafe}
+                    </span>
+                  ))}
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-terracotta-light" />
                 <span>
                   <strong className="text-cream">Indian Dinner</strong>
-                  <br />
-                  Thu – Sun: 5 PM – 9 PM
+                  {HOURS.filter((row) => row.dinner).map((row) => (
+                    <span key={row.day} className="block">
+                      {row.day.slice(0, 3)}: {row.dinner}
+                    </span>
+                  ))}
                 </span>
               </li>
             </ul>

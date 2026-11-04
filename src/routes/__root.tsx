@@ -16,6 +16,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { BackToTop } from "@/components/site/BackToTop";
+import { WelcomeIntro } from "@/components/site/WelcomeIntro";
+import { FloatingWhatsApp } from "@/components/site/WhatsApp";
 
 function NotFoundComponent() {
   return (
@@ -138,7 +140,9 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingWhatsApp />
         <BackToTop />
+        <WelcomeIntro />
         <Toaster />
       </div>
     </QueryClientProvider>

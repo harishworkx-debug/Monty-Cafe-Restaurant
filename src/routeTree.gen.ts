@@ -15,7 +15,6 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DayMenuRouteImport } from './routes/day-menu'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as IndianDinnerRouteImport } from './routes/indian-dinner'
-import { Route as ApiPublicBookingEnquiryRouteImport } from './routes/api/public/booking-enquiry'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -47,11 +46,6 @@ const IndianDinnerRoute = IndianDinnerRouteImport.update({
   path: '/indian-dinner',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicBookingEnquiryRoute = ApiPublicBookingEnquiryRouteImport.update({
-  id: '/api/public/booking-enquiry',
-  path: '/api/public/booking-enquiry',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,7 +54,6 @@ export interface FileRoutesByFullPath {
   '/day-menu': typeof DayMenuRoute
   '/gallery': typeof GalleryRoute
   '/indian-dinner': typeof IndianDinnerRoute
-  '/api/public/booking-enquiry': typeof ApiPublicBookingEnquiryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +62,6 @@ export interface FileRoutesByTo {
   '/day-menu': typeof DayMenuRoute
   '/gallery': typeof GalleryRoute
   '/indian-dinner': typeof IndianDinnerRoute
-  '/api/public/booking-enquiry': typeof ApiPublicBookingEnquiryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,27 +71,13 @@ export interface FileRoutesById {
   '/day-menu': typeof DayMenuRoute
   '/gallery': typeof GalleryRoute
   '/indian-dinner': typeof IndianDinnerRoute
-  '/api/public/booking-enquiry': typeof ApiPublicBookingEnquiryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/day-menu'
-    | '/gallery'
-    | '/indian-dinner'
-    | '/api/public/booking-enquiry'
+    '/' | '/about' | '/contact' | '/day-menu' | '/gallery' | '/indian-dinner'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/day-menu'
-    | '/gallery'
-    | '/indian-dinner'
-    | '/api/public/booking-enquiry'
+  to: '/' | '/about' | '/contact' | '/day-menu' | '/gallery' | '/indian-dinner'
   id:
     | '__root__'
     | '/'
@@ -108,7 +86,6 @@ export interface FileRouteTypes {
     | '/day-menu'
     | '/gallery'
     | '/indian-dinner'
-    | '/api/public/booking-enquiry'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,7 +95,6 @@ export interface RootRouteChildren {
   DayMenuRoute: typeof DayMenuRoute
   GalleryRoute: typeof GalleryRoute
   IndianDinnerRoute: typeof IndianDinnerRoute
-  ApiPublicBookingEnquiryRoute: typeof ApiPublicBookingEnquiryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -165,13 +141,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndianDinnerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/booking-enquiry': {
-      id: '/api/public/booking-enquiry'
-      path: '/api/public/booking-enquiry'
-      fullPath: '/api/public/booking-enquiry'
-      preLoaderRoute: typeof ApiPublicBookingEnquiryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -182,7 +151,6 @@ const rootRouteChildren: RootRouteChildren = {
   DayMenuRoute: DayMenuRoute,
   GalleryRoute: GalleryRoute,
   IndianDinnerRoute: IndianDinnerRoute,
-  ApiPublicBookingEnquiryRoute: ApiPublicBookingEnquiryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

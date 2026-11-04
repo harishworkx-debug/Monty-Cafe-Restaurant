@@ -52,6 +52,33 @@ export function whatsappLink(message: string): string {
   return `${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
+export interface BookingDetails {
+  name: string;
+  phone: string;
+  date: string;
+  time: string;
+  guests: string;
+  message: string;
+}
+
+/** Formats the booking form into the message the customer reviews and sends in WhatsApp. */
+export function buildBookingMessage(d: BookingDetails): string {
+  const lines = [
+    "Hello Monty Cafe & Restaurant!",
+    "",
+    "I would like to enquire about a table reservation.",
+    "",
+    `Name: ${d.name}`,
+    `Phone: ${d.phone}`,
+    `Date: ${d.date}`,
+    `Time: ${d.time}`,
+    `Guests: ${d.guests}`,
+  ];
+  if (d.message) lines.push("", `Additional Message: ${d.message}`);
+  lines.push("", "Please let me know if a table is available.", "", "Thank you!");
+  return lines.join("\n");
+}
+
 /** Pre-filled WhatsApp messages for each part of the site. */
 export const WA_MESSAGES = {
   general: "Hello Monty Cafe & Restaurant! I have a question about your cafe, please.",

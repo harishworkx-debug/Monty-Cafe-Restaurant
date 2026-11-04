@@ -3,7 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { OpeningHours } from "@/components/site/OpeningHours";
-import { DINNER_NOTE } from "@/lib/site";
+import { DINNER_NOTE, WA_MESSAGES } from "@/lib/site";
+import { WhatsAppButton } from "@/components/site/WhatsApp";
 import indianCurry from "@/assets/indian-curry.webp";
 import parmigiana from "@/assets/parmigiana.webp";
 
@@ -116,6 +117,9 @@ function IndianDinnerPage() {
                 >
                   See the Day Menu
                 </Link>
+                <WhatsAppButton variant="onDark" message={WA_MESSAGES.indianDinner}>
+                  Ask on WhatsApp
+                </WhatsAppButton>
               </div>
             </Reveal>
           </div>
