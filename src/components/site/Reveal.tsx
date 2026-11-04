@@ -1,4 +1,4 @@
-import { createElement, useEffect, useRef, useState, type ReactNode } from "react";
+import { createElement, useEffect, useRef, useState, type JSX, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface RevealProps {
@@ -46,7 +46,7 @@ export function Reveal({ children, className, delay = 0, as = "div" }: RevealPro
       ref,
       className: cn("reveal", visible && "reveal-visible", className),
       style: delay ? { transitionDelay: `${delay}ms` } : undefined,
-    },
+    } as never,
     children,
   );
 }

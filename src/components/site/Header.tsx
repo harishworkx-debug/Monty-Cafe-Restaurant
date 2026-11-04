@@ -3,7 +3,8 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import montyLogo from "@/assets/monty-logo.png";
 import { cn } from "@/lib/utils";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, WA_MESSAGES, whatsappLink } from "@/lib/site";
+import { WhatsAppIcon } from "./WhatsApp";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -92,12 +93,15 @@ export function SiteHeader() {
           >
             View Menu
           </Link>
-          <Link
-            to="/contact"
-            className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-cream shadow-md transition-all hover:-translate-y-0.5 hover:bg-terracotta-light hover:shadow-lg"
+          <a
+            href={whatsappLink(WA_MESSAGES.booking)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:brightness-105 hover:shadow-lg"
           >
-            Book a Table
-          </Link>
+            <WhatsAppIcon className="h-4 w-4" />
+            Book via WhatsApp
+          </a>
         </div>
 
         <button
@@ -154,12 +158,15 @@ export function SiteHeader() {
             >
               View Menu
             </Link>
-            <Link
-              to="/contact"
-              className="rounded-full bg-terracotta px-8 py-3 text-sm font-semibold tracking-wide uppercase text-cream"
+            <a
+              href={whatsappLink(WA_MESSAGES.booking)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 text-sm font-semibold tracking-wide uppercase text-white"
             >
-              Book a Table
-            </Link>
+              <WhatsAppIcon className="h-5 w-5" />
+              Book via WhatsApp
+            </a>
             <a href={BUSINESS.phoneHref} className="mt-2 text-sm text-cream/80">
               Call us — {BUSINESS.phoneDisplay}
             </a>

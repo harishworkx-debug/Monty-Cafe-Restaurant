@@ -6,6 +6,8 @@ import parmigiana from "@/assets/parmigiana.webp";
 import indianCurry from "@/assets/indian-curry.webp";
 import communityTable from "@/assets/community-table.webp";
 import { cn } from "@/lib/utils";
+import { WA_MESSAGES, whatsappLink } from "@/lib/site";
+import { WhatsAppIcon } from "./WhatsApp";
 
 const SLIDES = [
   {
@@ -21,7 +23,7 @@ const SLIDES = [
     alt: "Homestyle chicken parmigiana with burgers and fresh salads at Monty Cafe",
     eyebrow: "Breakfast & Brunch",
     title: "Make Your Mornings Delicious.",
-    text: "Start your day with freshly prepared breakfast, delicious bagels and barista-made coffee.",
+    text: "Discover beautiful breakfasts, freshly prepared bagels and barista-made coffee.",
     cta: { label: "Discover Day Menu", to: "/day-menu" },
   },
   {
@@ -29,7 +31,7 @@ const SLIDES = [
     alt: "Authentic Indian curries with rice served in copper bowls at Monty Restaurant",
     eyebrow: "A Taste of India",
     title: "A Taste of India, Right Here in Monty.",
-    text: "Enjoy comforting Indian flavours, delicious curries and a memorable dinner experience.",
+    text: "Enjoy comforting Indian flavours and memorable evenings with family and friends.",
     cta: { label: "Explore Indian Dinner", to: "/indian-dinner" },
   },
   {
@@ -37,7 +39,7 @@ const SLIDES = [
     alt: "Friends celebrating together around a table at Monty Cafe",
     eyebrow: "Community & Coffee",
     title: "Your Local Place to Connect.",
-    text: "Catch up with friends, enjoy great food and make yourself at home.",
+    text: "Come for the coffee, stay for the food and enjoy the warmth of Monty.",
     cta: { label: "Visit Us", to: "/contact" },
   },
 ] as const;
@@ -76,7 +78,7 @@ export function HeroSlider() {
     };
   }, []);
 
-  const slide = SLIDES[index];
+  const slide = SLIDES[index] ?? SLIDES[0];
 
   return (
     <section
@@ -84,12 +86,14 @@ export function HeroSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={(e) => {
-        touchX.current = e.touches[0].clientX;
+        const touch = e.touches[0];
+        if (touch) touchX.current = touch.clientX;
         setPaused(true);
       }}
       onTouchEnd={(e) => {
-        if (touchX.current !== null) {
-          const delta = e.changedTouches[0].clientX - touchX.current;
+        const touch = e.changedTouches[0];
+        if (touch && touchX.current !== null) {
+          const delta = touch.clientX - touchX.current;
           if (Math.abs(delta) > 50) go(index + (delta < 0 ? 1 : -1));
         }
         touchX.current = null;
@@ -140,12 +144,15 @@ export function HeroSlider() {
             >
               {slide.cta.label}
             </Link>
-            <Link
-              to="/contact"
-              className="rounded-full border border-cream/50 px-8 py-3.5 text-sm font-semibold tracking-wide uppercase text-cream transition-all hover:bg-cream hover:text-forest"
+            <a
+              href={whatsappLink(WA_MESSAGES.booking)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-cream/50 px-8 py-3.5 text-sm font-semibold tracking-wide uppercase text-cream transition-all hover:bg-cream hover:text-forest"
             >
-              Book a Table
-            </Link>
+              <WhatsAppIcon className="h-5 w-5" />
+              Book via WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -178,8 +185,8 @@ export function HeroSlider() {
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === index}
             className={cn(
-              "h-2.5 rounded-full transition-all duration-500",
-              i === index ? "w-10 bg-terracotta" : "w-2.5 bg-cream/50 hover:bg-cream/80",
+              "h-3 w-3 rounded-full transition-all duration-500",
+              i === index ? "w-10 bg-terracotta" : "bg-cream/50 hover:bg-cream/80",
             )}
           />
         ))}
