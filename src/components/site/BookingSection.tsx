@@ -6,8 +6,19 @@ import { BUSINESS, WA_MESSAGES, buildBookingMessage, whatsappLink } from "@/lib/
 import diningRoom from "@/assets/dining-room.webp";
 
 const TIME_SLOTS = [
-  "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
-  "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM",
+  "12:00 PM",
+  "12:30 PM",
+  "1:00 PM",
+  "1:30 PM",
+  "2:00 PM",
+  "2:30 PM",
+  "5:00 PM",
+  "5:30 PM",
+  "6:00 PM",
+  "6:30 PM",
+  "7:00 PM",
+  "7:30 PM",
+  "8:00 PM",
 ] as const;
 
 const GUEST_OPTIONS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"] as const;
@@ -34,9 +45,10 @@ export function BookingSection() {
     setMinDate(new Date().toISOString().slice(0, 10));
   }, []);
 
-  const setField = (key: keyof FormState) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-  ) => setForm((f) => ({ ...f, [key]: e.target.value }));
+  const setField =
+    (key: keyof FormState) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+      setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -84,8 +96,8 @@ export function BookingSection() {
             Let's Make Your Next Visit Special.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-cream/90">
-            Fill in the short form and WhatsApp will open with your details ready to send. Just press
-            send in WhatsApp to request your table.
+            Fill in the short form and WhatsApp will open with your details ready to send. Just
+            press send in WhatsApp to request your table.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -107,7 +119,8 @@ export function BookingSection() {
 
           <p className="mt-8 flex items-start gap-3 rounded-2xl bg-white/10 p-5 text-base text-cream/90">
             <CalendarCheck className="mt-0.5 h-5 w-5 shrink-0 text-terracotta-light" />
-            Dinner seats fill quickly on Friday and Saturday nights, so booking ahead is a good idea.
+            Dinner seats fill quickly on Friday and Saturday nights, so booking ahead is a good
+            idea.
           </p>
         </Reveal>
 
@@ -170,7 +183,12 @@ export function BookingSection() {
                   <label htmlFor="bk-time" className={labelClass}>
                     Preferred Time *
                   </label>
-                  <select id="bk-time" value={form.time} onChange={setField("time")} className={inputClass}>
+                  <select
+                    id="bk-time"
+                    value={form.time}
+                    onChange={setField("time")}
+                    className={inputClass}
+                  >
                     {TIME_SLOTS.map((t) => (
                       <option key={t} value={t}>
                         {t}
@@ -182,7 +200,12 @@ export function BookingSection() {
                   <label htmlFor="bk-guests" className={labelClass}>
                     Number of Guests *
                   </label>
-                  <select id="bk-guests" value={form.guests} onChange={setField("guests")} className={inputClass}>
+                  <select
+                    id="bk-guests"
+                    value={form.guests}
+                    onChange={setField("guests")}
+                    className={inputClass}
+                  >
                     {GUEST_OPTIONS.map((n) => (
                       <option key={n} value={n}>
                         {n === "1" ? "1 guest" : `${n} guests`}
@@ -192,7 +215,8 @@ export function BookingSection() {
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="bk-message" className={labelClass}>
-                    Additional Message <span className="font-normal text-muted-foreground">(optional)</span>
+                    Additional Message{" "}
+                    <span className="font-normal text-muted-foreground">(optional)</span>
                   </label>
                   <textarea
                     id="bk-message"
@@ -207,7 +231,10 @@ export function BookingSection() {
               </div>
 
               {error ? (
-                <p role="alert" className="mt-5 rounded-xl bg-destructive/10 px-4 py-3 text-base font-medium text-destructive">
+                <p
+                  role="alert"
+                  className="mt-5 rounded-xl bg-destructive/10 px-4 py-3 text-base font-medium text-destructive"
+                >
                   {error}
                 </p>
               ) : null}
@@ -221,8 +248,9 @@ export function BookingSection() {
               </button>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                WhatsApp will open with your booking ready to send. Your table is <strong className="text-forest">not confirmed</strong> until
-                Monty Cafe replies to you on WhatsApp.
+                WhatsApp will open with your booking ready to send. Your table is{" "}
+                <strong className="text-forest">not confirmed</strong> until Monty Cafe replies to
+                you on WhatsApp.
               </p>
               {sentUrl ? (
                 <a

@@ -15,8 +15,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Monty Cafe & Restaurant | Cafe, Brunch & Indian Dinner in Montmorency",
+        title: "Monty Cafe & Restaurant | Cafe, Brunch & Indian Dinner in Montmorency",
       },
       {
         name: "description",
@@ -33,9 +32,7 @@ export const Route = createFileRoute("/")({
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: "https://montycafe.com.au/" },
-    ],
+    links: [{ rel: "canonical", href: "https://montycafe.com.au/" }],
     scripts: [
       {
         type: "application/ld+json",

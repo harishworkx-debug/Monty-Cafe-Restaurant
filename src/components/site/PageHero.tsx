@@ -24,7 +24,9 @@ export function PageHero({ image, imageAlt, eyebrow, title, subtitle }: PageHero
           {title}
         </h1>
         {subtitle ? (
-          <p className="hero-rise hero-rise-3 mt-4 text-base text-cream/85 sm:text-lg">{subtitle}</p>
+          <p className="hero-rise hero-rise-3 mt-4 text-base text-cream/85 sm:text-lg">
+            {subtitle}
+          </p>
         ) : null}
       </div>
     </section>

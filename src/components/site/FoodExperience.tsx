@@ -37,10 +37,19 @@ const DAY_CARDS = [
 ] as const;
 
 const DINNER_HIGHLIGHTS = [
-  { title: "Authentic Curries", text: "Rich, slow-cooked curry classics made with traditional spices." },
-  { title: "Vegetarian Favourites", text: "Beautifully spiced vegetarian dishes, generous and comforting." },
+  {
+    title: "Authentic Curries",
+    text: "Rich, slow-cooked curry classics made with traditional spices.",
+  },
+  {
+    title: "Vegetarian Favourites",
+    text: "Beautifully spiced vegetarian dishes, generous and comforting.",
+  },
   { title: "Chicken Curry Classics", text: "Tender chicken in aromatic, flavour-packed sauces." },
-  { title: "Family-Style Dining", text: "Order a spread and share it the way Indian food is meant to be enjoyed." },
+  {
+    title: "Family-Style Dining",
+    text: "Order a spread and share it the way Indian food is meant to be enjoyed.",
+  },
 ] as const;
 
 export function FoodExperience() {
@@ -76,7 +85,9 @@ export function FoodExperience() {
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-xl font-semibold text-forest">{card.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.text}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {card.text}
+                    </p>
                   </div>
                 </article>
               </Reveal>

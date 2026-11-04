@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookATableRouteImport } from './routes/book-a-table'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DayMenuRouteImport } from './routes/day-menu'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookATableRoute = BookATableRouteImport.update({
+  id: '/book-a-table',
+  path: '/book-a-table',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -50,6 +56,7 @@ const IndianDinnerRoute = IndianDinnerRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book-a-table': typeof BookATableRoute
   '/contact': typeof ContactRoute
   '/day-menu': typeof DayMenuRoute
   '/gallery': typeof GalleryRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book-a-table': typeof BookATableRoute
   '/contact': typeof ContactRoute
   '/day-menu': typeof DayMenuRoute
   '/gallery': typeof GalleryRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book-a-table': typeof BookATableRoute
   '/contact': typeof ContactRoute
   '/day-menu': typeof DayMenuRoute
   '/gallery': typeof GalleryRoute
@@ -75,13 +84,27 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/contact' | '/day-menu' | '/gallery' | '/indian-dinner'
+    | '/'
+    | '/about'
+    | '/book-a-table'
+    | '/contact'
+    | '/day-menu'
+    | '/gallery'
+    | '/indian-dinner'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/day-menu' | '/gallery' | '/indian-dinner'
+  to:
+    | '/'
+    | '/about'
+    | '/book-a-table'
+    | '/contact'
+    | '/day-menu'
+    | '/gallery'
+    | '/indian-dinner'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/book-a-table'
     | '/contact'
     | '/day-menu'
     | '/gallery'
@@ -91,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BookATableRoute: typeof BookATableRoute
   ContactRoute: typeof ContactRoute
   DayMenuRoute: typeof DayMenuRoute
   GalleryRoute: typeof GalleryRoute
@@ -111,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-a-table': {
+      id: '/book-a-table'
+      path: '/book-a-table'
+      fullPath: '/book-a-table'
+      preLoaderRoute: typeof BookATableRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -147,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BookATableRoute: BookATableRoute,
   ContactRoute: ContactRoute,
   DayMenuRoute: DayMenuRoute,
   GalleryRoute: GalleryRoute,

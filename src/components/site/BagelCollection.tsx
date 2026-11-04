@@ -23,8 +23,8 @@ export function BagelCollection() {
                 Fresh Bagels, Made to Love.
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Baked fresh, filled generously. Our bagel menu has something for everyone —
-                savoury brekky classics, hearty lunch fillings and sweet finishes.
+                Baked fresh, filled generously. Our bagel menu has something for everyone — savoury
+                brekky classics, hearty lunch fillings and sweet finishes.
               </p>
             </Reveal>
 
@@ -39,7 +39,9 @@ export function BagelCollection() {
                       {i + 1}
                     </span>
                     <div className="relative">
-                      <h3 className="font-display text-xl font-semibold text-forest">{bagel.name}</h3>
+                      <h3 className="font-display text-xl font-semibold text-forest">
+                        {bagel.name}
+                      </h3>
                       <p className="mt-1.5 text-sm text-muted-foreground">{bagel.description}</p>
                     </div>
                     <p className="relative mt-5 font-display text-2xl font-semibold text-terracotta">

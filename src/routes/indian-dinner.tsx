@@ -26,12 +26,30 @@ export const Route = createFileRoute("/indian-dinner")({
 });
 
 const DINNER_HIGHLIGHTS = [
-  { title: "Authentic Curries", text: "Rich, slow-cooked curry classics made with traditional spices and deep, layered flavours." },
-  { title: "Vegetarian Favourites", text: "Beautifully spiced vegetarian dishes — generous, comforting and full of colour." },
-  { title: "Chicken Curry Classics", text: "Tender chicken in aromatic, flavour-packed sauces that keep regulars coming back." },
-  { title: "Freshly Prepared Meals", text: "Every dish is made to order — nothing pre-made, everything fresh from the kitchen." },
-  { title: "Traditional Flavours", text: "Recipes rooted in tradition, bringing the warmth of Indian home cooking to Were Street." },
-  { title: "Family-Style Dining", text: "Order a spread and share it the way Indian food is meant to be enjoyed — together." },
+  {
+    title: "Authentic Curries",
+    text: "Rich, slow-cooked curry classics made with traditional spices and deep, layered flavours.",
+  },
+  {
+    title: "Vegetarian Favourites",
+    text: "Beautifully spiced vegetarian dishes — generous, comforting and full of colour.",
+  },
+  {
+    title: "Chicken Curry Classics",
+    text: "Tender chicken in aromatic, flavour-packed sauces that keep regulars coming back.",
+  },
+  {
+    title: "Freshly Prepared Meals",
+    text: "Every dish is made to order — nothing pre-made, everything fresh from the kitchen.",
+  },
+  {
+    title: "Traditional Flavours",
+    text: "Recipes rooted in tradition, bringing the warmth of Indian home cooking to Were Street.",
+  },
+  {
+    title: "Family-Style Dining",
+    text: "Order a spread and share it the way Indian food is meant to be enjoyed — together.",
+  },
 ] as const;
 
 function IndianDinnerPage() {

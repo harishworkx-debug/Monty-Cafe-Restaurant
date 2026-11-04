@@ -36,9 +36,7 @@ export function OpeningHours() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-forest text-cream">
                   <Sun className="h-5 w-5" />
                 </span>
-                <h3 className="font-display text-xl font-semibold text-forest">
-                  Cafe — Daytime
-                </h3>
+                <h3 className="font-display text-xl font-semibold text-forest">Cafe — Daytime</h3>
               </div>
               <ul className="mt-5 divide-y divide-border text-sm">
                 {HOURS.map((row, i) => (
@@ -46,7 +44,8 @@ export function OpeningHours() {
                     key={row.day}
                     className={cn(
                       "flex items-center justify-between gap-3 py-2.5",
-                      i === todayIndex && "rounded-lg bg-terracotta/10 px-3 font-semibold text-forest",
+                      i === todayIndex &&
+                        "rounded-lg bg-terracotta/10 px-3 font-semibold text-forest",
                     )}
                   >
                     <span>{row.day}</span>

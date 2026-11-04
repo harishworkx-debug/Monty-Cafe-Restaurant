@@ -7,12 +7,10 @@
 /*
  * Monty Cafe & Restaurant — design system.
  *
- * Warm cream/ivory base, deep forest green + rich coffee brown,
- * soft beige, muted olive and terracotta accents.
+ * Warm ivory base (#FFF8EF), deep forest green (#173D32),
+ * rich terracotta (#B84C32), soft beige (#EADCC9),
+ * coffee brown (#4B3026), and warm gold (#D9A441).
  * Headings: Fraunces (elegant serif). Body: Karla (clean sans).
- *
- * The @theme inline block maps CSS custom properties to Tailwind
- * utility classes (e.g. --color-primary -> bg-primary, text-primary).
  */
 
 @theme inline {
@@ -61,81 +59,88 @@
 
   /* Monty brand palette */
   --color-cream: var(--cream);
+  --color-ivory: var(--cream);
   --color-sand: var(--sand);
+  --color-beige: var(--beige);
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
   --color-coffee: var(--coffee);
   --color-olive: var(--olive);
   --color-terracotta: var(--terracotta);
   --color-terracotta-light: var(--terracotta-light);
+  --color-gold: var(--gold);
 }
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.975 0.015 85);
-  --foreground: oklch(0.28 0.04 50);
-  --card: oklch(0.99 0.008 85);
-  --card-foreground: oklch(0.28 0.04 50);
-  --popover: oklch(0.99 0.008 85);
-  --popover-foreground: oklch(0.28 0.04 50);
-  --primary: oklch(0.32 0.06 155);
-  --primary-foreground: oklch(0.975 0.015 85);
-  --secondary: oklch(0.93 0.03 85);
-  --secondary-foreground: oklch(0.3 0.05 155);
-  --muted: oklch(0.94 0.02 85);
-  --muted-foreground: oklch(0.5 0.03 55);
-  --accent: oklch(0.64 0.13 45);
-  --accent-foreground: oklch(0.98 0.01 85);
+  /* Palette: Warm ivory, Deep forest green, Rich terracotta, Soft beige, Coffee brown, Warm gold */
+  --background: #fff8ef;
+  --foreground: #4b3026;
+  --card: #fffdf9;
+  --card-foreground: #4b3026;
+  --popover: #fffdf9;
+  --popover-foreground: #4b3026;
+  --primary: #173d32;
+  --primary-foreground: #fff8ef;
+  --secondary: #eadcc9;
+  --secondary-foreground: #173d32;
+  --muted: #f3eae0;
+  --muted-foreground: #6b554b;
+  --accent: #b84c32;
+  --accent-foreground: #fff8ef;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.9 0.02 85);
-  --ring: oklch(0.64 0.13 45);
-  --chart-1: oklch(0.64 0.13 45);
-  --chart-2: oklch(0.48 0.05 120);
-  --chart-3: oklch(0.32 0.06 155);
-  --chart-4: oklch(0.75 0.1 55);
-  --chart-5: oklch(0.28 0.04 50);
-  --sidebar: oklch(0.99 0.008 85);
-  --sidebar-foreground: oklch(0.28 0.04 50);
-  --sidebar-primary: oklch(0.32 0.06 155);
-  --sidebar-primary-foreground: oklch(0.975 0.015 85);
-  --sidebar-accent: oklch(0.93 0.03 85);
-  --sidebar-accent-foreground: oklch(0.3 0.05 155);
-  --sidebar-border: oklch(0.9 0.02 85);
-  --sidebar-ring: oklch(0.64 0.13 45);
+  --destructive-foreground: #fff8ef;
+  --border: #e5d5c3;
+  --input: #e5d5c3;
+  --ring: #b84c32;
+  --chart-1: #b84c32;
+  --chart-2: #173d32;
+  --chart-3: #d9a441;
+  --chart-4: #4b3026;
+  --chart-5: #eadcc9;
+  --sidebar: #fff8ef;
+  --sidebar-foreground: #4b3026;
+  --sidebar-primary: #173d32;
+  --sidebar-primary-foreground: #fff8ef;
+  --sidebar-accent: #eadcc9;
+  --sidebar-accent-foreground: #173d32;
+  --sidebar-border: #e5d5c3;
+  --sidebar-ring: #b84c32;
 
   /* Monty brand palette */
-  --cream: oklch(0.975 0.015 85);
-  --sand: oklch(0.92 0.03 80);
-  --forest: oklch(0.32 0.06 155);
-  --forest-deep: oklch(0.22 0.045 155);
-  --coffee: oklch(0.28 0.04 50);
-  --olive: oklch(0.48 0.05 120);
-  --terracotta: oklch(0.64 0.13 45);
-  --terracotta-light: oklch(0.75 0.1 55);
+  --cream: #fff8ef;
+  --ivory: #fff8ef;
+  --sand: #eadcc9;
+  --beige: #eadcc9;
+  --forest: #173d32;
+  --forest-deep: #0d261f;
+  --coffee: #4b3026;
+  --olive: #2b5746;
+  --terracotta: #b84c32;
+  --terracotta-light: #c95f44;
+  --gold: #d9a441;
 }
 
 .dark {
-  --background: oklch(0.22 0.045 155);
-  --foreground: oklch(0.975 0.015 85);
-  --card: oklch(0.26 0.05 155);
-  --card-foreground: oklch(0.975 0.015 85);
-  --popover: oklch(0.26 0.05 155);
-  --popover-foreground: oklch(0.975 0.015 85);
-  --primary: oklch(0.75 0.1 55);
-  --primary-foreground: oklch(0.22 0.045 155);
-  --secondary: oklch(0.3 0.05 155);
-  --secondary-foreground: oklch(0.975 0.015 85);
-  --muted: oklch(0.3 0.05 155);
-  --muted-foreground: oklch(0.72 0.03 85);
-  --accent: oklch(0.64 0.13 45);
-  --accent-foreground: oklch(0.98 0.01 85);
+  --background: #0d261f;
+  --foreground: #fff8ef;
+  --card: #13352b;
+  --card-foreground: #fff8ef;
+  --popover: #13352b;
+  --popover-foreground: #fff8ef;
+  --primary: #d9a441;
+  --primary-foreground: #0d261f;
+  --secondary: #173d32;
+  --secondary-foreground: #fff8ef;
+  --muted: #173d32;
+  --muted-foreground: #eadcc9;
+  --accent: #b84c32;
+  --accent-foreground: #fff8ef;
   --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.75 0.1 55);
+  --destructive-foreground: #fff8ef;
+  --border: rgba(234, 220, 201, 0.15);
+  --input: rgba(234, 220, 201, 0.2);
+  --ring: #d9a441;
 }
 
 @layer base {
@@ -197,12 +202,54 @@
 @keyframes whatsapp-pulse {
   0% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: 0.6;
   }
   70%,
   100% {
-    transform: scale(1.6);
+    transform: scale(1.65);
     opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes booking-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 16px rgba(217, 164, 65, 0.45),
+      0 8px 24px rgba(23, 61, 50, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(184, 76, 50, 0.7),
+      0 10px 32px rgba(23, 61, 50, 0.5);
+  }
+}
+
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.035);
   }
 }
 
@@ -210,50 +257,64 @@
   animation: whatsapp-pulse 2.4s ease-out infinite;
 }
 
-/* ---------- Welcome intro ---------- */
-
-@keyframes intro-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@utility animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
 }
+
+@utility animate-spin-reverse-slow {
+  animation: spin-reverse-slow 24s linear infinite;
+}
+
+@utility animate-booking-glow {
+  animation: booking-glow 3.5s ease-in-out infinite;
+}
+
+@utility animate-pulse-gentle {
+  animation: pulse-gentle 4s ease-in-out infinite;
+}
+
+/* ---------- Welcome intro ---------- */
 
 @keyframes intro-fade-out {
   from {
     opacity: 1;
+    transform: scale(1);
   }
   to {
     opacity: 0;
+    transform: scale(1.015);
   }
 }
 
 @keyframes intro-rise {
+  from {
+    opacity: 0.85;
+    transform: translateY(8px);
+  }
   to {
     opacity: 1;
     transform: none;
   }
 }
 
+/* Immediately 100% solid & opaque on screen load with 0ms delay so home page never flashes */
 .welcome-intro {
-  animation: intro-fade-in 0.7s ease-out both;
+  opacity: 1 !important;
+  background-color: #0d261f !important;
 }
 
 .welcome-intro-leaving {
-  animation: intro-fade-out 0.7s ease-in forwards;
+  animation: intro-fade-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
   pointer-events: none;
 }
 
 html.welcome-seen .welcome-intro {
-  display: none;
+  display: none !important;
 }
 
 .intro-item {
-  opacity: 0;
-  transform: translateY(22px) scale(0.97);
-  animation: intro-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 1;
+  animation: intro-rise 0.3s ease-out forwards;
 }
 
 @utility animate-kenburns {
@@ -299,7 +360,7 @@ html.welcome-seen .welcome-intro {
 
 @media (prefers-reduced-motion: reduce) {
   .welcome-intro {
-    display: none;
+    display: none !important;
   }
   .reveal {
     opacity: 1 !important;
@@ -312,7 +373,11 @@ html.welcome-seen .welcome-intro {
   }
   .animate-kenburns,
   .animate-float-y,
-  .animate-whatsapp-pulse {
+  .animate-whatsapp-pulse,
+  .animate-spin-slow,
+  .animate-spin-reverse-slow,
+  .animate-booking-glow,
+  .animate-pulse-gentle {
     animation: none !important;
   }
   .welcome-intro,

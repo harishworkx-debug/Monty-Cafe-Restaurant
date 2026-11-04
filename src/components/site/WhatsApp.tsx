@@ -15,7 +15,7 @@ type WhatsAppButtonVariant = "solid" | "outline" | "onDark";
 
 const VARIANTS: Record<WhatsAppButtonVariant, string> = {
   solid:
-    "bg-[#25D366] text-white shadow-md hover:-translate-y-0.5 hover:brightness-105 hover:shadow-lg",
+    "bg-[#25D366] text-white shadow-md hover:-translate-y-0.5 hover:brightness-105 hover:shadow-lg hover:shadow-[#25D366]/30",
   outline:
     "border border-[#25D366] bg-transparent text-[#128C4A] hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white",
   onDark:
@@ -58,26 +58,26 @@ export function WhatsAppButton({
   );
 }
 
-/** Floating WhatsApp button — fixed bottom-right on every page. */
+/** Floating WhatsApp button — standalone or can be rendered in FloatingActions. */
 export function FloatingWhatsApp() {
   return (
     <a
       href={whatsappLink(WA_MESSAGES.general)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
-      className="group fixed right-5 bottom-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-105 focus-visible:ring-4 focus-visible:ring-[#25D366]/40 focus-visible:outline-none"
+      aria-label="Chat with Us on WhatsApp"
+      className="group fixed right-4 bottom-5 sm:right-6 sm:bottom-6 z-40 flex h-13 w-13 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_20px_rgba(37,211,102,0.35),0_2px_6px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-108 hover:shadow-[0_0_24px_rgba(37,211,102,0.7)] active:scale-95 focus-visible:ring-4 focus-visible:ring-[#25D366]/50 focus-visible:outline-none"
     >
       <span
         aria-hidden
         className="animate-whatsapp-pulse absolute inset-0 rounded-full bg-[#25D366]"
       />
-      <WhatsAppIcon className="relative h-7 w-7" />
+      <WhatsAppIcon className="relative z-10 h-6.5 w-6.5 sm:h-7 sm:w-7 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]" />
       <span
         aria-hidden
-        className="pointer-events-none absolute right-full mr-3 hidden items-center rounded-full bg-forest-deep px-4 py-2 text-sm font-medium whitespace-nowrap text-cream shadow-lg group-hover:flex group-focus-visible:flex"
+        className="pointer-events-none absolute right-full mr-3.5 hidden items-center rounded-full border border-white/10 bg-[#0D261F]/95 px-3.5 py-1.5 text-xs font-semibold whitespace-nowrap text-[#FFF8EF] shadow-xl backdrop-blur-sm group-hover:flex group-focus-visible:flex transition-opacity"
       >
-        Chat with us on WhatsApp
+        Chat with Us
       </span>
     </a>
   );

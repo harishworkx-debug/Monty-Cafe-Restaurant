@@ -17,7 +17,7 @@ import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { BackToTop } from "@/components/site/BackToTop";
 import { WELCOME_SESSION_KEY, WelcomeIntro } from "@/components/site/WelcomeIntro";
-import { FloatingWhatsApp } from "@/components/site/WhatsApp";
+import { FloatingActions } from "@/components/site/FloatingActions";
 
 function NotFoundComponent() {
   return (
@@ -137,15 +137,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <WelcomeIntro />
       <div className="flex min-h-screen flex-col bg-background text-foreground">
         <SiteHeader />
         <main className="flex-1">
           <Outlet />
         </main>
         <SiteFooter />
-        <FloatingWhatsApp />
+        <FloatingActions />
         <BackToTop />
-        <WelcomeIntro />
         <Toaster />
       </div>
     </QueryClientProvider>

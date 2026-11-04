@@ -28,10 +28,30 @@ export const Route = createFileRoute("/day-menu")({
 });
 
 const DAY_ITEMS = [
-  { image: breakfastRoll, alt: "Freshly prepared breakfast roll with fried egg and hashbrown at Monty Cafe", title: "All-Day Breakfast", text: "Eggs Benedict, avocado crush, buttermilk pancakes, breakfast burgers and more — served all day." },
-  { image: clubSandwich, alt: "Club sandwich with hot chips at Monty Cafe", title: "Gourmet Sandwiches", text: "Club sandwiches, gourmet sandwiches and homestyle lunch favourites, made fresh to order." },
-  { image: burgers, alt: "Juicy burgers with chips served on red-check paper at Monty Cafe", title: "Burgers", text: "Juicy burgers with chips — a proper lunch that hits the spot every time." },
-  { image: coffeeCounter, alt: "Barista coffee machine at the Monty Cafe counter", title: "Barista Coffee", text: "Quality coffee made with care — flat whites, lattes, long blacks and more." },
+  {
+    image: breakfastRoll,
+    alt: "Freshly prepared breakfast roll with fried egg and hashbrown at Monty Cafe",
+    title: "All-Day Breakfast",
+    text: "Eggs Benedict, avocado crush, buttermilk pancakes, breakfast burgers and more — served all day.",
+  },
+  {
+    image: clubSandwich,
+    alt: "Club sandwich with hot chips at Monty Cafe",
+    title: "Gourmet Sandwiches",
+    text: "Club sandwiches, gourmet sandwiches and homestyle lunch favourites, made fresh to order.",
+  },
+  {
+    image: burgers,
+    alt: "Juicy burgers with chips served on red-check paper at Monty Cafe",
+    title: "Burgers",
+    text: "Juicy burgers with chips — a proper lunch that hits the spot every time.",
+  },
+  {
+    image: coffeeCounter,
+    alt: "Barista coffee machine at the Monty Cafe counter",
+    title: "Barista Coffee",
+    text: "Quality coffee made with care — flat whites, lattes, long blacks and more.",
+  },
 ] as const;
 
 function DayMenuPage() {
@@ -74,7 +94,9 @@ function DayMenuPage() {
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-xl font-semibold text-forest">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.text}
+                    </p>
                   </div>
                 </article>
               </Reveal>

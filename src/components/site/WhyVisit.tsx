@@ -54,7 +54,9 @@ export function WhyVisit() {
                 <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-sand text-forest transition-colors duration-500 group-hover:bg-forest group-hover:text-cream">
                   <reason.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 font-display text-lg font-semibold text-forest">{reason.title}</h3>
+                <h3 className="mt-5 font-display text-lg font-semibold text-forest">
+                  {reason.title}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
               </div>
             </Reveal>

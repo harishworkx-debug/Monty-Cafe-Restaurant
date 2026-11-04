@@ -38,8 +38,8 @@ export function StorySection() {
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
               Monty sits in the heart of Were Street, bringing together everything a neighbourhood
-              should have: a welcoming cafe for your mornings, a kitchen for lazy lunches and a
-              warm Indian dining room for the evenings.
+              should have: a welcoming cafe for your mornings, a kitchen for lazy lunches and a warm
+              Indian dining room for the evenings.
             </p>
           </Reveal>
 
@@ -49,7 +49,9 @@ export function StorySection() {
                 <Sun className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-semibold text-forest">By Day — Monty Cafe</h3>
+                <h3 className="font-display text-lg font-semibold text-forest">
+                  By Day — Monty Cafe
+                </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   Breakfast, brunch and lunch done right: fresh bagels, gourmet sandwiches, golden
                   pancakes and quality barista-made coffee.
@@ -61,7 +63,9 @@ export function StorySection() {
                 <MoonStar className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-semibold text-cream">By Night — Raj Indian Restaurant</h3>
+                <h3 className="font-display text-lg font-semibold text-cream">
+                  By Night — Raj Indian Restaurant
+                </h3>
                 <p className="mt-1 text-sm leading-relaxed text-cream/85">
                   Comforting curries, aromatic spices and traditional favourites — the flavours of
                   India, served with Monty's warm hospitality.

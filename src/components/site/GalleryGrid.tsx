@@ -21,15 +21,43 @@ export interface GalleryImage {
 
 /** All Monty photos in one shared list — used by the gallery page and homepage. */
 export const GALLERY_IMAGES: GalleryImage[] = [
-  { src: cafeInterior, alt: "Monty Cafe's dining room filled with locals enjoying breakfast", caption: "Atmosphere" },
+  {
+    src: cafeInterior,
+    alt: "Monty Cafe's dining room filled with locals enjoying breakfast",
+    caption: "Atmosphere",
+  },
   { src: diningRoom, alt: "Guests dining inside Monty Cafe & Restaurant", caption: "Dining room" },
-  { src: coffeeCounter, alt: "Barista coffee machine at the Monty Cafe counter with menu boards", caption: "Great coffee" },
-  { src: communityTable, alt: "Friends celebrating a special occasion together at Monty Cafe", caption: "Community" },
-  { src: burgers, alt: "Juicy burgers with chips served on red-check paper at Monty Cafe", caption: "Burgers" },
-  { src: breakfastRoll, alt: "Freshly prepared breakfast roll with fried egg and hashbrown", caption: "Breakfast" },
-  { src: parmigiana, alt: "Homestyle chicken parmigiana with burgers and fresh salads", caption: "Lunch favourites" },
+  {
+    src: coffeeCounter,
+    alt: "Barista coffee machine at the Monty Cafe counter with menu boards",
+    caption: "Great coffee",
+  },
+  {
+    src: communityTable,
+    alt: "Friends celebrating a special occasion together at Monty Cafe",
+    caption: "Community",
+  },
+  {
+    src: burgers,
+    alt: "Juicy burgers with chips served on red-check paper at Monty Cafe",
+    caption: "Burgers",
+  },
+  {
+    src: breakfastRoll,
+    alt: "Freshly prepared breakfast roll with fried egg and hashbrown",
+    caption: "Breakfast",
+  },
+  {
+    src: parmigiana,
+    alt: "Homestyle chicken parmigiana with burgers and fresh salads",
+    caption: "Lunch favourites",
+  },
   { src: clubSandwich, alt: "Club sandwich with hot chips at Monty Cafe", caption: "Sandwiches" },
-  { src: indianCurry, alt: "Indian curries with rice served in copper bowls at Monty Restaurant", caption: "Indian dinner" },
+  {
+    src: indianCurry,
+    alt: "Indian curries with rice served in copper bowls at Monty Restaurant",
+    caption: "Indian dinner",
+  },
 ];
 
 interface GalleryGridProps {

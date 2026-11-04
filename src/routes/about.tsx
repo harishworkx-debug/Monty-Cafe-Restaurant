@@ -61,8 +61,8 @@ function AboutPage() {
               </h2>
               <p className="mt-5 leading-relaxed text-muted-foreground">
                 Monty Cafe & Restaurant sits in the heart of Were Street, Montmorency — a place
-                where locals gather for their morning coffee, friends meet over brunch, and
-                families come together for a memorable Indian dinner.
+                where locals gather for their morning coffee, friends meet over brunch, and families
+                come together for a memorable Indian dinner.
               </p>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 By day, we're a classic Melbourne neighbourhood cafe: all-day breakfast, fresh
@@ -80,15 +80,15 @@ function AboutPage() {
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-2.5 w-2.5 shrink-0 rounded-full bg-forest" />
                   <span>
-                    <strong className="text-forest">By Day:</strong> Breakfast, brunch, lunch,
-                    fresh bagels and barista coffee — 7 days a week.
+                    <strong className="text-forest">By Day:</strong> Breakfast, brunch, lunch, fresh
+                    bagels and barista coffee — 7 days a week.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta" />
                   <span>
-                    <strong className="text-forest">By Night:</strong> Authentic Indian dinner
-                    — curries, vegetarian dishes and family-style dining, Thursday to Sunday.
+                    <strong className="text-forest">By Night:</strong> Authentic Indian dinner —
+                    curries, vegetarian dishes and family-style dining, Thursday to Sunday.
                   </span>
                 </li>
               </ul>
@@ -125,14 +125,14 @@ function AboutPage() {
                 Raj Indian Restaurant
               </h2>
               <p className="mt-5 leading-relaxed text-cream/85">
-                When the cafe closes for the afternoon, the spices come out. Raj Indian
-                Restaurant takes over the dining room with comforting, freshly prepared Indian
-                meals — the kind that turn a weeknight into an occasion.
+                When the cafe closes for the afternoon, the spices come out. Raj Indian Restaurant
+                takes over the dining room with comforting, freshly prepared Indian meals — the kind
+                that turn a weeknight into an occasion.
               </p>
               <p className="mt-4 leading-relaxed text-cream/75">
-                From rich, slow-cooked curries to beautifully spiced vegetarian dishes, every
-                meal is made to be shared with family and friends. Dinner is served Thursday to
-                Sunday, 5 PM to 9 PM.
+                From rich, slow-cooked curries to beautifully spiced vegetarian dishes, every meal
+                is made to be shared with family and friends. Dinner is served Thursday to Sunday, 5
+                PM to 9 PM.
               </p>
             </Reveal>
           </div>

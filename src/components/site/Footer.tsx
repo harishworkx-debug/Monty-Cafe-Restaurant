@@ -6,6 +6,7 @@ import { BUSINESS, HOURS } from "@/lib/site";
 const EXPLORE_LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Book a Table", to: "/book-a-table" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact & Bookings", to: "/contact" },
 ] as const;
@@ -69,7 +70,10 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-terracotta-light" />
-                <a href={BUSINESS.phoneHref} className="transition-colors hover:text-terracotta-light">
+                <a
+                  href={BUSINESS.phoneHref}
+                  className="transition-colors hover:text-terracotta-light"
+                >
                   {BUSINESS.phone}
                 </a>
               </li>

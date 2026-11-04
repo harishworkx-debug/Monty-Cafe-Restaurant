@@ -45,8 +45,8 @@ function ContactPage() {
               We're Here for You
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Whether it's a breakfast booking, a dinner reservation or just a question — reach
-              out and we'll get back to you.
+              Whether it's a breakfast booking, a dinner reservation or just a question — reach out
+              and we'll get back to you.
             </p>
           </Reveal>
 
@@ -57,8 +57,18 @@ function ContactPage() {
                 className="group flex flex-col items-center gap-3 rounded-3xl bg-card p-7 text-center shadow-sm ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-forest text-cream transition-colors group-hover:bg-terracotta">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.5a1 1 0 01.968.748l1.078 3.78a1 1 0 01-.5 1.21l-1.6.8a11 11 0 005 5l.8-1.6a1 1 0 011.21-.5l3.78 1.078A1 1 0 0121 17.5V20a2 2 0 01-2 2C10.474 22 2 13.526 2 5a2 2 0 011-2z" />
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 5a2 2 0 012-2h2.5a1 1 0 01.968.748l1.078 3.78a1 1 0 01-.5 1.21l-1.6.8a11 11 0 005 5l.8-1.6a1 1 0 011.21-.5l3.78 1.078A1 1 0 0121 17.5V20a2 2 0 01-2 2C10.474 22 2 13.526 2 5a2 2 0 011-2z"
+                    />
                   </svg>
                 </span>
                 <div>
@@ -91,9 +101,23 @@ function ContactPage() {
                 className="group flex flex-col items-center gap-3 rounded-3xl bg-card p-7 text-center shadow-sm ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-forest text-cream transition-colors group-hover:bg-terracotta">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
                   </svg>
                 </span>
                 <div>

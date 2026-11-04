@@ -24,6 +24,7 @@ https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.109255451877!2d145.11
 Build a visually rich hospitality website with a premium Australian neighbourhood cafe atmosphere.
 
 Design inspiration:
+
 - Modern Melbourne cafes
 - Premium brunch and restaurant websites
 - Editorial food photography layouts
@@ -31,6 +32,7 @@ Design inspiration:
 - Warm, welcoming hospitality branding
 
 Suggested colour palette:
+
 - Warm cream / ivory backgrounds
 - Deep forest green
 - Rich coffee brown
@@ -47,6 +49,7 @@ Avoid a generic template appearance. The website should look professionally desi
 Create a premium sticky navigation bar.
 
 Include:
+
 - Monty Cafe & Restaurant logo/wordmark
 - Home
 - About
@@ -56,6 +59,7 @@ Include:
 - Contact
 
 Add two prominent buttons:
+
 - View Menu
 - Book a Table
 
@@ -94,6 +98,7 @@ Description: "Catch up with friends, enjoy great food and make yourself at home.
 CTA: Visit Us
 
 Slider requirements:
+
 - Automatic slide transition
 - Manual navigation arrows
 - Elegant pagination indicators
@@ -131,6 +136,7 @@ Create two visually distinct feature sections.
 ### Daytime Cafe Experience
 
 Showcase:
+
 - All-day breakfast
 - Eggs Benedict
 - Avocado Crush
@@ -149,6 +155,7 @@ Heading:
 "Evenings Made Better with Indian Flavours."
 
 Highlight:
+
 - Authentic Indian curries
 - Vegetarian favourites
 - Chicken curry
@@ -168,6 +175,7 @@ Heading:
 "Fresh Bagels, Made to Love."
 
 Show these options:
+
 - Schnitzel Bagel – $15
 - Chicken and Avo Bagel – $15
 - Bacon and Egg Bagel – $12
@@ -188,6 +196,7 @@ Prices should be easy to update later.
 Create a beautiful icon-based feature section.
 
 Highlight:
+
 - Freshly prepared food
 - Quality coffee
 - Breakfast, brunch and lunch
@@ -204,6 +213,7 @@ Do not invent awards, certifications or unsupported claims.
 Create an immersive photo gallery.
 
 Include:
+
 - Breakfast dishes
 - Coffee
 - Bagels
@@ -243,6 +253,7 @@ Heading:
 "Let's Make Your Next Visit Special."
 
 Include a booking enquiry form with:
+
 - Full Name
 - Phone Number
 - Email
@@ -254,11 +265,13 @@ Include a booking enquiry form with:
 Add a Book a Table button.
 
 Important:
+
 - If the existing OpenTable booking integration is available, use the official booking link or embed it.
 - Otherwise, make the form submit an enquiry through a properly configured backend or email service.
 - Never display a booking as confirmed unless the booking provider confirms it.
 
 Add quick contact buttons:
+
 - Call Now
 - WhatsApp
 - Book a Table
@@ -272,6 +285,7 @@ https://wa.me/61439622806
 ## 12. Location and Google Maps
 
 Create an elegant location section with:
+
 - Address: 14 Were St, Montmorency VIC 3094, Australia
 - Embedded Google Map using the supplied iframe URL
 - Get Directions button linking to the supplied Google Maps link
@@ -284,6 +298,7 @@ Use a clean split layout with contact information on one side and the map on the
 Create a premium multi-column footer.
 
 Include:
+
 - Monty Cafe & Restaurant logo
 - Short brand description
 - Navigation links
@@ -303,6 +318,7 @@ Add a beautiful final footer tagline:
 The website must feel smooth, polished and alive.
 
 Implement:
+
 - Smooth scrolling
 - Scroll-triggered reveal animations
 - Staggered card animations
@@ -326,6 +342,7 @@ Keep animations smooth and performance-friendly. Avoid excessive movement.
 Do not create any JSON-based image system.
 
 STRICTLY DO NOT CREATE:
+
 - images.json
 - image.json
 - gallery.json
@@ -369,6 +386,7 @@ If images are not yet supplied, create elegant image-free placeholders using CSS
 ## 17. SEO Requirements
 
 Add:
+
 - Unique page title
 - Meta description
 - Open Graph tags
@@ -380,6 +398,7 @@ Add:
 - Local SEO keywords naturally included
 
 Suggested keywords:
+
 - Cafe in Montmorency
 - Breakfast in Montmorency
 - Brunch in Montmorency

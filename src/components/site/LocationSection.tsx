@@ -30,7 +30,10 @@ export function LocationSection() {
               </span>
               <div>
                 <h3 className="font-semibold text-forest">Phone</h3>
-                <a href={BUSINESS.phoneHref} className="mt-1 block text-muted-foreground transition-colors hover:text-terracotta">
+                <a
+                  href={BUSINESS.phoneHref}
+                  className="mt-1 block text-muted-foreground transition-colors hover:text-terracotta"
+                >
                   {BUSINESS.phone}
                 </a>
               </div>

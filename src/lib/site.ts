@@ -11,6 +11,7 @@ export const BUSINESS = {
   phoneDisplay: "0439 622 806",
   phoneHref: "tel:+61439622806",
   whatsapp: "https://wa.me/61439622806",
+  whatsappNumber: "+61 439 622 806",
   website: "https://montycafe.com.au/",
   mapsLink: "https://maps.app.goo.gl/Yry2rHNFYEvxUAp1A",
   mapsEmbed:
@@ -58,34 +59,44 @@ export interface BookingDetails {
   date: string;
   time: string;
   guests: string;
-  message: string;
+  message?: string;
 }
 
-/** Formats the booking form into the message the customer reviews and sends in WhatsApp. */
+/**
+ * Formats the booking form into the exact requested message format
+ * ready for the customer to review and send in WhatsApp.
+ */
 export function buildBookingMessage(d: BookingDetails): string {
   const lines = [
     "Hello Monty Cafe & Restaurant!",
     "",
-    "I would like to enquire about a table reservation.",
+    "I would like to book a table.",
+    "",
+    "Booking Details:",
     "",
     `Name: ${d.name}`,
     `Phone: ${d.phone}`,
     `Date: ${d.date}`,
     `Time: ${d.time}`,
-    `Guests: ${d.guests}`,
+    `Number of Guests: ${d.guests}`,
+    "",
+    `Additional Message: ${d.message && d.message.trim() ? d.message.trim() : "None"}`,
+    "",
+    "Please confirm whether a table is available.",
+    "",
+    "Thank you!",
   ];
-  if (d.message) lines.push("", `Additional Message: ${d.message}`);
-  lines.push("", "Please let me know if a table is available.", "", "Thank you!");
   return lines.join("\n");
 }
 
 /** Pre-filled WhatsApp messages for each part of the site. */
 export const WA_MESSAGES = {
   general: "Hello Monty Cafe & Restaurant! I have a question about your cafe, please.",
-  booking: "Hello Monty Cafe & Restaurant! I would like to enquire about booking a table, please.",
+  booking: "Hello Monty Cafe & Restaurant! I would like to book a table, please.",
   dayMenu: "Hello Monty Cafe & Restaurant! I would like to enquire about your day menu, please.",
   indianDinner:
     "Hello Monty Cafe & Restaurant! I would like to know more about your Indian dinner menu, please.",
-  bagels: "Hello Monty Cafe & Restaurant! I would like to enquire about your bagel collection, please.",
+  bagels:
+    "Hello Monty Cafe & Restaurant! I would like to enquire about your bagel collection, please.",
   takeaway: "Hello Monty Cafe & Restaurant! I would like to order a takeaway, please.",
 } as const;
