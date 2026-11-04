@@ -16,7 +16,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/site/Header";
 import { SiteFooter } from "@/components/site/Footer";
 import { BackToTop } from "@/components/site/BackToTop";
-import { WelcomeIntro } from "@/components/site/WelcomeIntro";
+import { WELCOME_SESSION_KEY, WelcomeIntro } from "@/components/site/WelcomeIntro";
 import { FloatingWhatsApp } from "@/components/site/WhatsApp";
 
 function NotFoundComponent() {
@@ -115,10 +115,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const WELCOME_SEEN_SCRIPT = `try{if(sessionStorage.getItem(${JSON.stringify(WELCOME_SESSION_KEY)})==='1')document.documentElement.classList.add('welcome-seen')}catch(e){}`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en-AU">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: WELCOME_SEEN_SCRIPT }} />
         <HeadContent />
       </head>
       <body>

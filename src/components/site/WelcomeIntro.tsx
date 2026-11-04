@@ -2,53 +2,61 @@ import { useEffect, useState } from "react";
 import montyLogo from "@/assets/monty-logo.png";
 import { cn } from "@/lib/utils";
 
-const SESSION_KEY = "monty-welcome-shown";
+export const WELCOME_SESSION_KEY = "monty-welcome-shown";
 
-type Phase = "idle" | "shown" | "leaving" | "done";
+const LEAVE_AFTER_MS = 2700;
+const FADE_OUT_MS = 700;
+
+type Phase = "shown" | "leaving" | "done";
 
 /**
- * Cinematic welcome intro — shown once per browser session.
- * Respects sessionStorage and prefers-reduced-motion; skipped entirely for
- * returning visitors and reduced-motion users.
+ * Cinematic welcome intro, shown once per browser session.
+ * Rendered in the server HTML so it is the first thing visible on load; the root
+ * layout hides it before paint for returning visitors and reduced-motion users.
  */
 export function WelcomeIntro() {
-  const [phase, setPhase] = useState<Phase>("idle");
+  const [phase, setPhase] = useState<Phase>("shown");
 
   useEffect(() => {
-    let shownBefore = false;
+    let shownBefore = true;
     try {
-      shownBefore = sessionStorage.getItem(SESSION_KEY) === "1";
+      shownBefore = sessionStorage.getItem(WELCOME_SESSION_KEY) === "1";
     } catch {
-      shownBefore = true; // storage unavailable — safest to skip
+      /* storage unavailable: skip the intro */
     }
-    if (shownBefore) return;
-
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (shownBefore || reduced) {
+      setPhase("done");
+      return;
+    }
     try {
-      sessionStorage.setItem(SESSION_KEY, "1");
+      sessionStorage.setItem(WELCOME_SESSION_KEY, "1");
     } catch {
       /* ignore */
     }
-    if (reduced) return;
-
-    setPhase("shown");
-    const t1 = window.setTimeout(() => setPhase("leaving"), 2700);
-    const t2 = window.setTimeout(() => setPhase("done"), 3450);
-    return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-    };
   }, []);
 
   useEffect(() => {
-    if (phase !== "shown" && phase !== "leaving") return;
+    if (phase !== "shown") return;
+    const id = window.setTimeout(() => setPhase("leaving"), LEAVE_AFTER_MS);
+    return () => window.clearTimeout(id);
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase !== "leaving") return;
+    const id = window.setTimeout(() => setPhase("done"), FADE_OUT_MS);
+    return () => window.clearTimeout(id);
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase === "done") return;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
   }, [phase]);
 
-  if (phase !== "shown" && phase !== "leaving") return null;
+  if (phase === "done") return null;
 
   return (
     <div
@@ -59,12 +67,10 @@ export function WelcomeIntro() {
         phase === "leaving" && "welcome-intro-leaving",
       )}
     >
-      {/* Soft warm glow behind the logo */}
       <div
         aria-hidden
         className="absolute top-1/2 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-terracotta/10 blur-3xl"
       />
-      {/* Subtle coffee-inspired ring */}
       <div
         aria-hidden
         className="animate-float-y absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-terracotta/25"

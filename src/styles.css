@@ -246,6 +246,10 @@
   pointer-events: none;
 }
 
+html.welcome-seen .welcome-intro {
+  display: none;
+}
+
 .intro-item {
   opacity: 0;
   transform: translateY(22px) scale(0.97);
@@ -294,6 +298,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .welcome-intro {
+    display: none;
+  }
   .reveal {
     opacity: 1 !important;
     transform: none !important;
