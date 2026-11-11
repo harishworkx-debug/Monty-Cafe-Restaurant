@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { OpeningHours } from "@/components/site/OpeningHours";
+import { IndianDinnerMenu } from "@/components/site/IndianDinnerMenu";
 import { DINNER_NOTE, WA_MESSAGES } from "@/lib/site";
 import { WhatsAppButton } from "@/components/site/WhatsApp";
 import indianCurry from "@/assets/indian-curry.webp";
@@ -122,8 +123,15 @@ function IndianDinnerPage() {
                 before your visit.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="#dinner-menu"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-forest-deep transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  View Full Dinner Menu
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
                 <Link
-                  to="/contact"
+                  to="/book-a-table"
                   className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-8 py-3.5 text-sm font-semibold text-cream transition-all hover:-translate-y-0.5 hover:bg-terracotta-light hover:shadow-lg"
                 >
                   Book for Dinner
@@ -144,6 +152,8 @@ function IndianDinnerPage() {
         </div>
       </section>
 
+      <IndianDinnerMenu />
+
       <section className="bg-sand/50 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
@@ -156,7 +166,7 @@ function IndianDinnerPage() {
             <p className="mt-4 leading-relaxed text-muted-foreground">{DINNER_NOTE}</p>
             <div className="mt-8">
               <Link
-                to="/contact"
+                to="/book-a-table"
                 className="group inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-sm font-semibold text-cream transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Book a Table for Dinner

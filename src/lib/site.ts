@@ -98,5 +98,7 @@ export const WA_MESSAGES = {
     "Hello Monty Cafe & Restaurant! I would like to know more about your Indian dinner menu, please.",
   bagels:
     "Hello Monty Cafe & Restaurant! I would like to enquire about your bagel collection, please.",
+  grabAndGo:
+    "Hello Monty Cafe & Restaurant! I would like to ask about today's Grab & Go options (bagels, focaccias, toasties & burritos), please.",
   takeaway: "Hello Monty Cafe & Restaurant! I would like to order a takeaway, please.",
 } as const;
