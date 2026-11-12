@@ -128,6 +128,16 @@ export function SiteFooter() {
           <p className="text-xs text-cream/60">
             © {new Date().getFullYear()} {BUSINESS.name} — {BUSINESS.address}
           </p>
+          <p className="text-xs text-cream/70">
+            <a
+              href="https://www.techhim.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline decoration-cream/35 underline-offset-4 transition-colors hover:text-terracotta-light hover:decoration-terracotta-light"
+            >
+              Powered by TechHim Solutions
+            </a>
+          </p>
         </div>
       </div>
     </footer>
