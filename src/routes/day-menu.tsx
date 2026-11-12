@@ -46,7 +46,7 @@ const DAY_ITEMS: readonly {
     image: clubSandwich,
     alt: "Club sandwich with hot chips at Monty Cafe",
     title: "Grab & Go + Lunch",
-    text: "Bagels, focaccias, toasties & burritos from the counter alongside gourmet sandwiches, schnitzels & parmas.",
+    text: "Bagels, toasties, croissants, focaccias, wraps & burritos from the counter alongside gourmet sandwiches, schnitzels & parmas.",
     tab: "grab-and-go",
   },
   {

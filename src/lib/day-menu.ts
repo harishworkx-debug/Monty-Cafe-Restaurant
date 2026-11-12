@@ -25,11 +25,12 @@ export interface ExtrasGroup {
 }
 
 export interface GrabAndGoSection {
-  id: "bagels" | "focaccias" | "toasties" | "burritos";
+  id: "bagels" | "toasties" | "croissant" | "focaccia" | "wraps" | "burritos";
   title: string;
   shortTagline: string;
   description: string;
   items: DayMenuItem[];
+  promoNote?: string;
   emptyNote?: string;
 }
 
@@ -79,7 +80,7 @@ export const GRAB_AND_GO_SECTIONS: GrabAndGoSection[] = [
   {
     id: "bagels",
     title: "Bagels",
-    shortTagline: "8 Fresh Counter Favourites",
+    shortTagline: "8 Fresh Bagels",
     description:
       "Baked fresh and filled generously — savoury brekky bagels, gourmet chicken fillings and sweet finishes.",
     items: BAGELS.map((b) => ({
@@ -89,53 +90,83 @@ export const GRAB_AND_GO_SECTIONS: GrabAndGoSection[] = [
     })),
   },
   {
-    id: "focaccias",
-    title: "Focaccias",
-    shortTagline: "Toasted & Counter-Ready",
-    description:
-      "Crisp golden focaccias loaded with fresh fillings — enjoy seated with chips or ready from the counter.",
+    id: "toasties",
+    title: "Toasties / Sandwich",
+    shortTagline: "5 Toasted Favourites",
+    description: "Golden melted toasties and toasted sandwiches ready hot from the press.",
     items: [
-      {
-        name: "BLT Focaccia",
-        tags: ["GFO"],
-        price: "$19.50",
-        description: "Bacon, cos lettuce, tomato and aioli, served with seasoned chips.",
-      },
+      { name: "Cheese", price: "$7.90" },
+      { name: "Cheese + Tomato", price: "$8.90" },
+      { name: "Cheese + Tomato + Ham", price: "$9.90" },
+      { name: "Ham + Cheese", price: "$9.50" },
+      { name: "Egg & Bacon", price: "$10.50" },
     ],
-    emptyNote:
-      "More daily Grab & Go counter focaccia varieties are available in-store and will be added once the counter board is finalised.",
   },
   {
-    id: "toasties",
-    title: "Toasties",
-    shortTagline: "Hot Off the Grill",
-    description:
-      "Golden toasted sandwiches and melts — great for quick morning coffee pairings or easy lunches.",
+    id: "croissant",
+    title: "Croissant",
+    shortTagline: "5 Flaky Options",
+    description: "Warm, flaky croissants served plain or filled to order at the counter.",
     items: [
-      {
-        name: "Cheesy Toastie",
-        tags: ["GFO"],
-        price: "$7.90",
-        description: "Thick white toasty with melted tasty cheese.",
-      },
-      {
-        name: "Choice of Toast",
-        price: "$7.90",
-        description: "Choice of bread with butter, Vegemite, strawberry jam or peanut butter.",
-      },
+      { name: "Plain", price: "$5.00" },
+      { name: "Cheese + Tomato", price: "$8.90" },
+      { name: "Ham + Cheese", price: "$9.50" },
+      { name: "Ham + Cheese + Tomato", price: "$9.90" },
+      { name: "Egg & Bacon", price: "$10.50" },
     ],
-    emptyNote:
-      "Additional Grab & Go toastie combinations from our cabinet are available at the counter — full list coming soon.",
+  },
+  {
+    id: "focaccia",
+    title: "Focaccia",
+    shortTagline: "4 Loaded Fillings",
+    description: "Crisp golden focaccias loaded with fresh counter-ready fillings.",
+    items: [
+      { name: "Egg & Bacon", price: "$14.50" },
+      { name: "Chicken & Avocado", price: "$14.50" },
+      { name: "Chicken Schnitzel", price: "$14.90" },
+      { name: "Roast Veg", price: "$13.90" },
+    ],
+  },
+  {
+    id: "wraps",
+    title: "Wraps",
+    shortTagline: "4 Fresh Wraps",
+    description: "Freshly prepared breakfast and lunch wraps — ideal when you're on the move.",
+    items: [
+      { name: "Veggie Wrap", price: "$14.00" },
+      { name: "Chicken Schnitzel", price: "$14.90" },
+      { name: "Egg, Bacon & Cheese", price: "$14.50" },
+      { name: "Breaky Wrap", price: "$14.50" },
+    ],
   },
   {
     id: "burritos",
     title: "Burritos",
-    shortTagline: "Rolled Fresh Daily",
-    description:
-      "Hearty handheld burritos made fresh at Monty Cafe — ask our counter team or message us on WhatsApp for today's flavours.",
-    items: [],
-    emptyNote:
-      "Our full Grab & Go burrito flavours and pricing are prepared fresh daily at the counter and will be published here next.",
+    shortTagline: "4 Made-to-Order Burritos",
+    description: "Fresh. Delicious. Made your way — packed warm to order and big on flavour.",
+    items: [
+      {
+        name: "Classic Burrito",
+        price: "$14.00",
+        description: "Includes eggs, cheese and aioli.",
+      },
+      {
+        name: "Bacon Burrito",
+        price: "$16.00",
+        description: "Includes egg, bacon, cheese and aioli.",
+      },
+      {
+        name: "Chicken Avo Burrito",
+        price: "$17.00",
+        description: "Includes chicken, avo, eggs, cheese and aioli.",
+      },
+      {
+        name: "Monty Special Burrito",
+        price: "$18.00",
+        description: "Includes eggs, bacon, cheese, hash brown, aioli and BBQ sauce.",
+      },
+    ],
+    promoNote: "Add a small coffee with any of the above burritos for $2.50.",
   },
 ];
 

@@ -7,6 +7,7 @@ import {
   ChevronDown,
   CircleDot,
   Coffee,
+  Croissant,
   CupSoda,
   Flame,
   Leaf,
@@ -14,6 +15,7 @@ import {
   Sandwich,
   Sparkles,
   UtensilsCrossed,
+  Wheat,
 } from "lucide-react";
 import {
   ALLERGY_NOTICE,
@@ -68,9 +70,11 @@ const CATEGORY_ICONS: Record<string, ComponentType<{ className?: string }>> = {
 
 const GRAB_GO_ICONS: Record<GrabAndGoSection["id"], ComponentType<{ className?: string }>> = {
   bagels: CircleDot,
-  focaccias: Sandwich,
   toasties: Flame,
-  burritos: UtensilsCrossed,
+  croissant: Croissant,
+  focaccia: Sandwich,
+  wraps: UtensilsCrossed,
+  burritos: Wheat,
 };
 
 function matchesDayDietary(tags: DayDietaryTag[] | undefined, filter: DayDietaryFilter): boolean {
@@ -209,7 +213,8 @@ function GrabAndGoPanel({ dietaryFilter }: { dietaryFilter: DayDietaryFilter }) 
             Grab &amp; Go
           </h3>
           <p className="mt-1.5 text-sm text-[#4B3026]/85 sm:text-base">
-            Select any icon below to open our counter Bagels, Focaccias, Toasties and Burritos.
+            Select any icon below to open our counter Bagels, Toasties / Sandwich, Croissants,
+            Focaccias, Wraps and Burritos.
           </p>
         </div>
 
@@ -219,7 +224,7 @@ function GrabAndGoPanel({ dietaryFilter }: { dietaryFilter: DayDietaryFilter }) 
       </header>
 
       {/* Clickable Grab & Go Icon Cards */}
-      <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {GRAB_AND_GO_SECTIONS.map((section) => {
           const Icon = GRAB_GO_ICONS[section.id];
           const isOpen = openSection === section.id;
@@ -307,6 +312,13 @@ function GrabAndGoPanel({ dietaryFilter }: { dietaryFilter: DayDietaryFilter }) 
               Switch the dietary filter back to Show All to browse every item in {selected.title},
               or ask our counter team about custom fillings.
             </p>
+          ) : null}
+
+          {selected.promoNote ? (
+            <div className="mt-6 flex items-center gap-3 rounded-xl border border-[#D9A441]/60 bg-[#173D32] px-5 py-3.5 text-sm font-semibold text-[#FFF8EF] shadow-sm">
+              <Coffee className="h-5 w-5 shrink-0 text-[#D9A441]" />
+              <span>{selected.promoNote}</span>
+            </div>
           ) : null}
 
           {selected.emptyNote ? (
