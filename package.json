@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "postbuild": "node -e \"const fs=require('fs'); fs.mkdirSync('dist', {recursive: true}); fs.cpSync('.output/public', 'dist/client', {recursive: true}); console.log('[postbuild] Synchronized .output/public -> dist/client');\"",
     "build:dev": "vite build --mode development",
     "start": "node .output/server/index.mjs",
     "preview": "vite preview",
