@@ -6,6 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { DayMenuBoard, type DayMenuTab } from "@/components/site/DayMenuBoard";
 import { WA_MESSAGES } from "@/lib/site";
 import { WhatsAppButton } from "@/components/site/WhatsApp";
+import { getDayMenuSchema, getBreadcrumbSchema } from "@/lib/seo";
 import breakfastRoll from "@/assets/breakfast-roll.webp";
 import clubSandwich from "@/assets/club-sandwich.webp";
 import burgers from "@/assets/burgers.webp";
@@ -22,8 +23,32 @@ export const Route = createFileRoute("/day-menu")({
         content:
           "Monty Cafe's daytime menu — all-day breakfast, eggs Benedict, avocado crush, buttermilk pancakes, fresh bagels, gourmet sandwiches, burgers and barista-made coffee.",
       },
+      { property: "og:title", content: "Day Menu | Monty Cafe & Restaurant Montmorency" },
+      {
+        property: "og:description",
+        content:
+          "All-day breakfast, artisan bagels, burgers, toasties, and specialty coffee at Monty Cafe on Were Street.",
+      },
+      { property: "og:url", content: "https://montycafe.com.au/day-menu" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://montycafe.com.au/day-menu" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getDayMenuSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          getBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Day Menu", path: "/day-menu" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: DayMenuPage,
 });

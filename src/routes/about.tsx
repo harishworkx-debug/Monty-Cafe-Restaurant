@@ -5,6 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { WhyVisit } from "@/components/site/WhyVisit";
 import { OpeningHours } from "@/components/site/OpeningHours";
 import { BUSINESS } from "@/lib/site";
+import { getAboutPageSchema, getBreadcrumbSchema } from "@/lib/seo";
 import cafeInterior from "@/assets/cafe-interior.webp";
 import coffeeCounter from "@/assets/coffee-counter.webp";
 import indianCurry from "@/assets/indian-curry.webp";
@@ -20,8 +21,35 @@ export const Route = createFileRoute("/about")({
         content:
           "Monty Cafe & Restaurant on Were Street, Montmorency — a welcoming cafe by day serving breakfast, brunch and coffee, and an Indian restaurant by night.",
       },
+      {
+        property: "og:title",
+        content: "About Monty Cafe & Restaurant | Montmorency",
+      },
+      {
+        property: "og:description",
+        content:
+          "Two experiences, one Were Street address: vibrant daytime cafe and authentic evening Indian dining.",
+      },
+      { property: "og:url", content: "https://montycafe.com.au/about" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://montycafe.com.au/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getAboutPageSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          getBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: AboutPage,
 });

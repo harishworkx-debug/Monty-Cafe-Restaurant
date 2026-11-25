@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { Reveal } from "@/components/site/Reveal";
+import { getGalleryPageSchema, getBreadcrumbSchema } from "@/lib/seo";
 import cafeInterior from "@/assets/cafe-interior.webp";
 
 export const Route = createFileRoute("/gallery")({
@@ -15,8 +16,35 @@ export const Route = createFileRoute("/gallery")({
         content:
           "Photos of Monty Cafe & Restaurant — breakfast dishes, coffee, bagels, burgers, sandwiches, Indian curries and the warm restaurant atmosphere in Montmorency.",
       },
+      {
+        property: "og:title",
+        content: "Photo Gallery | Monty Cafe & Restaurant",
+      },
+      {
+        property: "og:description",
+        content:
+          "Take a peek inside Monty Cafe & Restaurant — artisan breakfast, coffee, burgers, and evening Indian dishes.",
+      },
+      { property: "og:url", content: "https://montycafe.com.au/gallery" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://montycafe.com.au/gallery" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getGalleryPageSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          getBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Gallery", path: "/gallery" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: GalleryPage,
 });

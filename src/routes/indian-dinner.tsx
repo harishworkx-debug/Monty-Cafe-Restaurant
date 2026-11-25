@@ -6,6 +6,7 @@ import { OpeningHours } from "@/components/site/OpeningHours";
 import { IndianDinnerMenu } from "@/components/site/IndianDinnerMenu";
 import { DINNER_NOTE, WA_MESSAGES } from "@/lib/site";
 import { WhatsAppButton } from "@/components/site/WhatsApp";
+import { getIndianDinnerMenuSchema, getBreadcrumbSchema } from "@/lib/seo";
 import indianCurry from "@/assets/indian-curry.webp";
 import parmigiana from "@/assets/parmigiana.webp";
 
@@ -20,8 +21,35 @@ export const Route = createFileRoute("/indian-dinner")({
         content:
           "Authentic Indian dinner at Monty Cafe & Restaurant — curries, vegetarian favourites, chicken curry and traditional flavours, Thursday to Sunday, 5 PM – 9 PM in Montmorency.",
       },
+      {
+        property: "og:title",
+        content: "Indian Dinner Menu | Raj Indian Restaurant at Monty",
+      },
+      {
+        property: "og:description",
+        content:
+          "Authentic Indian curries, tandoori specialties, and freshly baked naans in Montmorency. Thursday to Sunday, 5 PM – 9 PM.",
+      },
+      { property: "og:url", content: "https://montycafe.com.au/indian-dinner" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://montycafe.com.au/indian-dinner" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getIndianDinnerMenuSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          getBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Indian Dinner", path: "/indian-dinner" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: IndianDinnerPage,
 });

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/site/WhatsApp";
 import { BUSINESS, buildBookingMessage, whatsappLink, type BookingDetails } from "@/lib/site";
+import { getBookingPageSchema, getBreadcrumbSchema } from "@/lib/seo";
 import diningRoom from "@/assets/dining-room.webp";
 
 export const Route = createFileRoute("/book-a-table")({
@@ -37,7 +38,29 @@ export const Route = createFileRoute("/book-a-table")({
         content:
           "Planning a visit? We'd love to welcome you to Monty Cafe & Restaurant. Quick, direct WhatsApp reservation.",
       },
+      { property: "og:url", content: "https://montycafe.com.au/book-a-table" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://montycafe.com.au/book-a-table" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getBookingPageSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          getBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Book a Table", path: "/book-a-table" },
+          ]),
+        ),
+      },
+    ],
+  }),
+  component: BookATablePage,
+});
   }),
   component: BookATablePage,
 });

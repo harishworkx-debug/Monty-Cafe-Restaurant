@@ -10,6 +10,7 @@ import { BookingSection } from "@/components/site/BookingSection";
 import { LocationSection } from "@/components/site/LocationSection";
 import { Reveal } from "@/components/site/Reveal";
 import { BUSINESS } from "@/lib/site";
+import { getRestaurantSchema, getBreadcrumbSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,23 +37,11 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Restaurant",
-          name: BUSINESS.name,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "14 Were St",
-            addressLocality: "Montmorency",
-            addressRegion: "VIC",
-            postalCode: "3094",
-            addressCountry: "AU",
-          },
-          telephone: BUSINESS.phone,
-          url: BUSINESS.website,
-          servesCuisine: ["Cafe", "Breakfast", "Brunch", "Indian"],
-          priceRange: "$$",
-        }),
+        children: JSON.stringify(getRestaurantSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getBreadcrumbSchema([{ name: "Home", path: "/" }])),
       },
     ],
   }),

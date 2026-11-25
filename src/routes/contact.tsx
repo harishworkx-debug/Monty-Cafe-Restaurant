@@ -5,6 +5,7 @@ import { LocationSection } from "@/components/site/LocationSection";
 import { OpeningHours } from "@/components/site/OpeningHours";
 import { Reveal } from "@/components/site/Reveal";
 import { BUSINESS } from "@/lib/site";
+import { getContactPageSchema, getBreadcrumbSchema } from "@/lib/seo";
 import diningRoom from "@/assets/dining-room.webp";
 
 export const Route = createFileRoute("/contact")({
@@ -18,8 +19,35 @@ export const Route = createFileRoute("/contact")({
         content:
           "Contact Monty Cafe & Restaurant in Montmorency — book a table, call us, or find us at 14 Were St, Montmorency VIC 3094. Phone: +61 439 622 806.",
       },
+      {
+        property: "og:title",
+        content: "Contact & Bookings | Monty Cafe & Restaurant",
+      },
+      {
+        property: "og:description",
+        content:
+          "Visit us at 14 Were St, Montmorency VIC 3094, call 0439 622 806 or book a table directly.",
+      },
+      { property: "og:url", content: "https://montycafe.com.au/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://montycafe.com.au/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getContactPageSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          getBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact & Bookings", path: "/contact" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: ContactPage,
 });
