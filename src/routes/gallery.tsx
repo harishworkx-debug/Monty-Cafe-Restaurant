@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, CalendarCheck, UtensilsCrossed } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { Reveal } from "@/components/site/Reveal";
@@ -75,6 +76,50 @@ function GalleryPage() {
             </p>
           </Reveal>
           <GalleryGrid />
+        </div>
+      </section>
+
+      {/* Internal Link CTA Section */}
+      <section className="bg-forest-deep py-16 text-cream lg:py-20">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-terracotta-light">
+              Visit Monty
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl text-cream">
+              Taste the Experience in Person
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-cream/80 sm:text-base">
+              From our morning cafe spreads on Were Street to evening aromatic Indian curries with
+              family, we would love to welcome you.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to="/day-menu"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-sm font-bold text-cream shadow-md transition-all hover:-translate-y-0.5 hover:bg-forest-light hover:shadow-lg"
+              >
+                <UtensilsCrossed className="h-4 w-4 text-gold" />
+                Explore Day Menu
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/indian-dinner"
+                className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-6 py-3 text-sm font-bold text-cream shadow-md transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark hover:shadow-lg"
+              >
+                <UtensilsCrossed className="h-4 w-4 text-cream" />
+                Indian Dinner Menu
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/book-a-table"
+                className="group inline-flex items-center gap-2 rounded-full border border-cream/35 px-6 py-3 text-sm font-bold text-cream transition-all hover:-translate-y-0.5 hover:bg-cream hover:text-forest-deep"
+              >
+                <CalendarCheck className="h-4 w-4 text-gold" />
+                Reserve a Table
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

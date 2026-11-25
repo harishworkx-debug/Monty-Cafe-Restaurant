@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { CalendarCheck, UtensilsCrossed } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { BookingSection } from "@/components/site/BookingSection";
 import { LocationSection } from "@/components/site/LocationSection";
@@ -76,6 +77,29 @@ function ContactPage() {
               Whether it's a breakfast booking, a dinner reservation or just a question — reach out
               and we'll get back to you.
             </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                to="/book-a-table"
+                className="inline-flex items-center gap-1.5 rounded-full bg-forest px-5 py-2.5 text-xs sm:text-sm font-semibold text-cream transition-colors hover:bg-forest-light"
+              >
+                <CalendarCheck className="h-4 w-4 text-gold" />
+                Reserve a Table
+              </Link>
+              <Link
+                to="/day-menu"
+                className="inline-flex items-center gap-1.5 rounded-full border border-forest/30 px-5 py-2.5 text-xs sm:text-sm font-semibold text-forest transition-colors hover:bg-forest hover:text-cream"
+              >
+                <UtensilsCrossed className="h-4 w-4 text-terracotta" />
+                Day Menu
+              </Link>
+              <Link
+                to="/indian-dinner"
+                className="inline-flex items-center gap-1.5 rounded-full border border-terracotta/30 px-5 py-2.5 text-xs sm:text-sm font-semibold text-terracotta transition-colors hover:bg-terracotta hover:text-cream"
+              >
+                <UtensilsCrossed className="h-4 w-4 text-forest" />
+                Indian Dinner Menu
+              </Link>
+            </div>
           </Reveal>
 
           <Reveal delay={120} className="mt-12">

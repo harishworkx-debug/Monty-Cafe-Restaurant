@@ -162,6 +162,22 @@ function AboutPage() {
                 is made to be shared with family and friends. Dinner is served Thursday to Sunday, 5
                 PM to 9 PM.
               </p>
+              <div className="mt-7 flex flex-wrap gap-4">
+                <Link
+                  to="/indian-dinner"
+                  className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-3 text-sm font-semibold text-cream transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark hover:shadow-lg"
+                >
+                  Explore Indian Dinner
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  to="/book-a-table"
+                  className="group inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3 text-sm font-semibold text-cream transition-all hover:-translate-y-0.5 hover:bg-cream hover:text-forest-deep"
+                >
+                  Book an Evening Table
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </Reveal>
           </div>
           <Reveal delay={120} className="order-2 lg:order-2">

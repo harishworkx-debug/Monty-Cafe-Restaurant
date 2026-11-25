@@ -61,9 +61,6 @@ export const Route = createFileRoute("/book-a-table")({
   }),
   component: BookATablePage,
 });
-  }),
-  component: BookATablePage,
-});
 
 const POPULAR_GUEST_COUNTS = ["1", "2", "4", "6", "8+"] as const;
 
@@ -621,7 +618,7 @@ export function BookATablePage() {
                 <p className="text-xs text-[#4B3026]/90 leading-relaxed">
                   Need a same-day table or have an urgent question? Give our team a quick ring:
                 </p>
-                <div className="mt-3 flex items-center gap-3">
+                <div className="mt-3 flex flex-wrap items-center gap-3">
                   <a
                     href={BUSINESS.phoneHref}
                     className="inline-flex items-center gap-2 rounded-full bg-[#173D32] px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#FFF8EF] transition-colors hover:bg-[#0D261F]"
@@ -634,7 +631,14 @@ export function BookATablePage() {
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#B84C32] hover:underline"
                   >
                     <UtensilsCrossed className="h-3.5 w-3.5" />
-                    Explore Menu
+                    Day Menu
+                  </Link>
+                  <Link
+                    to="/indian-dinner"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#173D32] hover:underline"
+                  >
+                    <UtensilsCrossed className="h-3.5 w-3.5" />
+                    Indian Dinner
                   </Link>
                 </div>
               </div>

@@ -125,9 +125,20 @@ export function SiteFooter() {
           <p className="font-display text-lg text-terracotta-light">
             Good Food. Great Coffee. Wonderful Company.
           </p>
-          <p className="text-xs text-cream/60">
-            © {new Date().getFullYear()} {BUSINESS.name} — {BUSINESS.address}
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-cream/60">
+            <span>
+              © {new Date().getFullYear()} {BUSINESS.name} — {BUSINESS.address}
+            </span>
+            <span aria-hidden="true">•</span>
+            <a
+              href="https://montycafe.com.au/sitemap.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-terracotta-light hover:underline"
+            >
+              XML Sitemap
+            </a>
+          </div>
           <p className="text-xs text-cream/70">
             <a
               href="https://www.techhim.online/"

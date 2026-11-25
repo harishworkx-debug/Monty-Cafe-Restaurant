@@ -11,6 +11,19 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    prerender: { enabled: true },
+    prerender: {
+      enabled: true,
+      filter: (page: { path: string }) => {
+        // Do not attempt to SSR-prerender static assets or sitemaps
+        if (
+          page.path.endsWith(".xml") ||
+          page.path.endsWith(".txt") ||
+          page.path.includes("sitemap")
+        ) {
+          return false;
+        }
+        return true;
+      },
+    },
   },
 });
