@@ -131,9 +131,7 @@ export function SiteFooter() {
             </span>
             <span aria-hidden="true">•</span>
             <a
-              href="https://montycafe.com.au/sitemap.xml"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/sitemap.xml"
               className="transition-colors hover:text-terracotta-light hover:underline"
             >
               XML Sitemap
